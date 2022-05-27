@@ -104,7 +104,7 @@ const SignInModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
 
               setToken(token);
               clearInterval(intervalID);
-              router.push("/");
+              router.replace("/");
 
             } else {
 
