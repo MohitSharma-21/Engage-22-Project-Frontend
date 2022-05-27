@@ -30,7 +30,7 @@ export default function Home() {
     }
 
     if (token) {
-      getUser()  
+      // getUser()  
     }
 
   }, [token]);
