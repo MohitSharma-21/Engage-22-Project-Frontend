@@ -11,7 +11,7 @@ export default function Home() {
 
   useEffect(() => {
 
-    if (token) {
+    // if (token) {
 
       axios({
         url: "api/auth/profile",
@@ -29,14 +29,14 @@ export default function Home() {
           // console.log(err);
         }); 
                
-    }
+    // }
 
   }, [token]);
 
   return (
-    <div className={styles.container}>
+    <div>
       
-      <div className={`${styles.main} flex justify-center items-center`}>
+      <div className={`${styles.main} m-2 flex justify-center items-center`}>
         <div
           className={`${styles.heading} text-center flex flex-col justify-center items-center`}
         >
