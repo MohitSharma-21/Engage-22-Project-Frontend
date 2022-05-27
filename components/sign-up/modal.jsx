@@ -58,7 +58,7 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
       return;
     }
 
-    waitToast();
+    // waitToast();
 
     const dataForApiRequest = {
       username: username,
@@ -76,9 +76,9 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
         if (res.data.error.face) errorToast(res.data.error.face);
         else {
           setToken(res.data.token);
-          setModalsOpen(false);
+          // setModalsOpen(false);
           router.push("/");
-          sucsessToast("Signed-up");
+          // sucsessToast("Signed-up");
         }
       })
 
