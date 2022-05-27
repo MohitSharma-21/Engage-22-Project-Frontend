@@ -75,10 +75,10 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
 
         if (res.data.error.face) errorToast(res.data.error.face);
         else {
-          setModalsOpen(false);
+            setModalsOpen(false);
             setToken(res.data.token);
-            router.push("/");
             sucsessToast("Signed-up");
+            router.replace("/");
         }
       })
 
@@ -97,15 +97,6 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
 
   return (
     <div>
-      
-      <ToastContainer
-            theme="dark"
-            position="bottom-right"
-            limit={5}
-            draggablePercent={60}
-            autoClose={2000}
-            pauseOnFocusLoss={false}
-          />
     <div
       className={`sm:m-2 absolute top-28 bottom-0 left-0 right-0 flex justify-center items-center`}
     >
