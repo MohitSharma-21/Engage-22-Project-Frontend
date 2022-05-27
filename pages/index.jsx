@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import { useAuth } from "../context/auth";
 import axios from "../utils/axios";
+import {ToastContainer, toast } from "react-toastify";
 
 export default function Home() {
   const [user, setUser] = useState("");
@@ -34,6 +35,15 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      
+      <ToastContainer
+            theme="dark"
+            position="bottom-right"
+            limit={5}
+            draggablePercent={60}
+            autoClose={2000}
+            pauseOnFocusLoss={false}
+          />
       <div className={`${styles.main} flex justify-center items-center`}>
         <div
           className={`${styles.heading} text-center flex flex-col justify-center items-center`}

@@ -20,14 +20,6 @@ const Layout = ({ children }) => {
           {children}
           <ParticleBackground />
           
-          <ToastContainer
-            theme="dark"
-            position="bottom-right"
-            limit={5}
-            draggablePercent={60}
-            autoClose={2000}
-            pauseOnFocusLoss={false}
-          />
         </div>
       )}
 

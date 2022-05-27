@@ -13,7 +13,7 @@ import {
   waitToast,
   updateToast,
 } from "../../components/toast";
-import { toast } from "react-toastify";
+import {ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/router";
 
 const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
@@ -97,6 +97,16 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
   };
 
   return (
+    <div>
+      
+      <ToastContainer
+            theme="dark"
+            position="bottom-right"
+            limit={5}
+            draggablePercent={60}
+            autoClose={2000}
+            pauseOnFocusLoss={false}
+          />
     <div
       className={`sm:m-2 absolute top-28 bottom-0 left-0 right-0 flex justify-center items-center`}
     >
@@ -193,6 +203,7 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 };
