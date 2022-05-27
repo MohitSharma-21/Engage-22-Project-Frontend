@@ -58,7 +58,7 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
       return;
     }
 
-    // waitToast();
+    waitToast();
 
     const dataForApiRequest = {
       username: username,
