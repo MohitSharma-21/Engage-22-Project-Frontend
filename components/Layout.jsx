@@ -14,15 +14,6 @@ const Layout = ({ children }) => {
         <title>Picture and ToDo Manager</title>
       </Head>
 
-      <ToastContainer
-        theme="dark"
-        position="bottom-right"
-        limit={5}
-        draggablePercent={60}
-        autoClose={2000}
-        pauseOnFocusLoss={false}
-      />
-
       {isModelLoaded && (
         <div>
           <Navbar />
@@ -43,6 +34,16 @@ const Layout = ({ children }) => {
       )}
 
       <LoadModel isModelLoaded={isModelLoaded} setIsModelLoaded={setIsModelLoaded} />
+
+      <ToastContainer
+        theme="dark"
+        position="bottom-right"
+        limit={5}
+        draggablePercent={60}
+        autoClose={2000}
+        pauseOnFocusLoss={false}
+      />
+
     </div>
   );
 };
