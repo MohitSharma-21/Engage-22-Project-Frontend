@@ -97,10 +97,10 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
 
   return (
     <div
-      className={`sm:m-2 absolute top-28 bottom-0 left-0 right-0 flex justify-center items-center`}
+      className={`m-2 absolute top-24 left-0 right-0 flex justify-center items-center`}
     >
       <div
-        className={`${styles.modal} sm:w-full md:w-11/12 relative w-3/5 mb-2`}
+        className={`${styles.modal} sm:w-full md:w-11/12  mb-5 relative w-3/5`}
       >
         {/* close button */}
 
