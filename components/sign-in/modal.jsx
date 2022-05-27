@@ -101,10 +101,11 @@ const SignInModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
                 boxColor: "green",
                 lineWidth: 3,
               });
-
+              
+              toast.dismiss();
               setToken(token);
               clearInterval(intervalID);
-              router.push("/");
+              router.replace("/gallery");
 
             } else {
 

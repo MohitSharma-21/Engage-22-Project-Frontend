@@ -10,8 +10,7 @@ export default function Home() {
 
   useEffect(() => {
 
-    if (token) {
-
+    const getUser = () =>{
       axios({
         url: "api/auth/profile",
         method: "GET",
@@ -27,7 +26,10 @@ export default function Home() {
         .catch(function (err) {
           // console.log(err);
         }); 
-               
+    }
+
+    if (token) {
+      getUser()
     }
 
   }, [token]);
