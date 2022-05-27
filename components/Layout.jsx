@@ -17,6 +17,14 @@ const Layout = ({ children }) => {
       {isModelLoaded && (
         <div>
           <Navbar />
+          <ToastContainer
+        theme="dark"
+        position="bottom-right"
+        limit={5}
+        draggablePercent={60}
+        autoClose={2000}
+        pauseOnFocusLoss={false}
+      />
           {children}
           <ParticleBackground />
         </div>
@@ -35,14 +43,7 @@ const Layout = ({ children }) => {
 
       <LoadModel isModelLoaded={isModelLoaded} setIsModelLoaded={setIsModelLoaded} />
 
-      <ToastContainer
-        theme="dark"
-        position="bottom-right"
-        limit={5}
-        draggablePercent={60}
-        autoClose={2000}
-        pauseOnFocusLoss={false}
-      />
+     
 
     </div>
   );
