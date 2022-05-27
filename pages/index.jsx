@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import { useAuth } from "../context/auth";
 import axios from "../utils/axios";
+import { toast } from "react-toastify";
 
 export default function Home() {
   const [user, setUser] = useState("");
@@ -9,6 +10,7 @@ export default function Home() {
   const token = getToken();
 
   useEffect(() => {
+    toast.dismiss();
 
     if (token) {
 

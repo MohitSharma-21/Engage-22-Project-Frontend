@@ -1,5 +1,6 @@
 .above {
   height: 84vh;
+  border: 2px solid red;
 }
 .main {
   background-color: rgba(0, 0, 0, 0.6);
