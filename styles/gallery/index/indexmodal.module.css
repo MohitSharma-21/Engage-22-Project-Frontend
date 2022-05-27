@@ -1,0 +1,30 @@
+.modelwrapper {
+  position: fixed;
+}
+
+.modal {
+  box-shadow: inset 3px 3px 5px rgba(135, 135, 136, 0.3),
+    inset -3px -3px 5px rgba(135, 135, 136, 0.3);
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.content button {
+  border: 2px solid gray;
+  transition: all 0.2s ease-in-out;
+}
+
+.content button:hover {
+  border-color: white;
+}
+.content button:active {
+  color: black;
+  background-color: white;
+}
+
+.close {
+  transition: all 0.3s ease;
+}
+
+.close:hover {
+  transform: scale(1.02);
+}

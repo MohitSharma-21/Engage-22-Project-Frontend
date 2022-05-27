@@ -1,0 +1,22 @@
+.above {
+  height: 84vh;
+}
+.main {
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: inset 5px 5px 5px rgba(135, 135, 136, 0.3),
+    inset -5px -5px 5px rgba(135, 135, 136, 0.3);
+}
+
+.button {
+  border: 2px solid gray;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  border-color: white;
+}
+
+.button:active {
+  background-color: white;
+  color: black;
+}

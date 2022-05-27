@@ -1,0 +1,29 @@
+.modal {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.closeButton {
+  transition: all 0.5s ease;
+}
+
+.closeButton:hover {
+  transform: scale(1.03);
+}
+
+.modalContent {
+  box-shadow: inset 5px 5px 5px rgba(135, 135, 136, 0.3),
+    inset -5px -5px 5px rgba(135, 135, 136, 0.3);
+}
+
+.camerabtn {
+  border: 2px solid gray;
+  transition: all 0.2s ease-in-out;
+}
+
+.camerabtn:hover {
+  border-color: white;
+}
+.camerabtn:active {
+  background-color: white;
+  color: black;
+}

@@ -1,0 +1,14 @@
+.content {
+  box-shadow: inset 3px 3px 5px rgba(135, 135, 136, 0.3),
+    inset -3px -3px 5px rgba(135, 135, 136, 0.3);
+}
+
+.captureIcon,
+.uploadIcon {
+  transition: all 0.3s ease;
+}
+
+.captureIcon:hover,
+.uploadIcon:hover {
+  transform: scale(1.03);
+}

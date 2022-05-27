@@ -1,0 +1,16 @@
+.content {
+  box-shadow: inset 3px 3px 5px rgba(135, 135, 136, 0.3),
+    inset -3px -3px 5px rgba(135, 135, 136, 0.3);
+}
+
+.saveButton{
+  border: 2px solid gray;
+}
+
+.saveButton:hover{
+  border-color: white;
+}
+.saveButton:active{
+  background-color: white;
+  color: black;
+}

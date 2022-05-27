@@ -1,0 +1,22 @@
+.addTask {
+  box-shadow: inset 2px 2px 1px rgba(255, 255, 255, 0.3),
+    inset -2px -2px 1px rgba(252, 252, 254, 0.3);
+}
+
+.addTask button {
+  box-shadow: inset 2px 2px 1px rgba(27, 27, 29, 0.3),
+    inset -2px -2px 1px rgba(29, 29, 31, 0.3);
+}
+
+.addTask button:hover {
+  background-color: rgb(14, 240, 14);
+}
+
+@media (max-width: 500px) {
+  .addTask {
+    width: 97%;
+  }
+  .addTask input {
+    width: 100%;
+  }
+}

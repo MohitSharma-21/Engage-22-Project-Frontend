@@ -1,0 +1,9 @@
+.links {
+  transition: all 0.4s ease;
+  box-shadow: inset 2px 2px 1px rgba(255, 255, 255, 0.3),
+    inset -2px -2px 1px rgba(252, 252, 254, 0.3);
+}
+
+.links:hover {
+  transform: scale(1.05);
+}
