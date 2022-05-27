@@ -17,20 +17,20 @@ const Layout = ({ children }) => {
       {isModelLoaded && (
         <div>
           <Navbar />
-         
           {children}
-          <ToastContainer
-        theme="dark"
-        position="bottom-right"
-        limit={5}
-        draggablePercent={60}
-        autoClose={2000}
-        pauseOnFocusLoss={false}
-      />
           <ParticleBackground />
+          
+          <ToastContainer
+            theme="dark"
+            position="bottom-right"
+            limit={5}
+            draggablePercent={60}
+            autoClose={2000}
+            pauseOnFocusLoss={false}
+          />
         </div>
       )}
-      
+
       {!isModelLoaded && (
         <div className=" h-screen flex flex-col justify-center items-center">
           <h1 className="text-5xl font-bold tracking-wide text-black ">
@@ -42,10 +42,10 @@ const Layout = ({ children }) => {
         </div>
       )}
 
-      <LoadModel isModelLoaded={isModelLoaded} setIsModelLoaded={setIsModelLoaded} />
-
-     
-
+      <LoadModel
+        isModelLoaded={isModelLoaded}
+        setIsModelLoaded={setIsModelLoaded}
+      />
     </div>
   );
 };
