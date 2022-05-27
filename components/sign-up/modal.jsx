@@ -76,9 +76,9 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
         if (res.data.error.face) errorToast(res.data.error.face);
         else {
           setToken(res.data.token);
-          // setModalsOpen(false);
-          router.push("/");
+          setModalsOpen(false);
           sucsessToast("Signed-up");
+          router.push("/");
         }
       })
 
