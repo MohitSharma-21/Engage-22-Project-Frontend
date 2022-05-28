@@ -96,7 +96,7 @@ const AddPhoto = () => {
     <div>
       <div className={`flex justify-center m-4`}>
         <div
-          className={`${styles.content} p-2 w-4/5 flex flex-col justify-center`}
+          className={`${styles.content} p-2 md:w-full w-4/5 flex flex-col justify-center`}
         >
           <h2 className="text-3xl mb-4 font-bold flex justify-center items-center">
             Capture Selfie
@@ -183,10 +183,10 @@ const AddPhoto = () => {
 
           {showSelfie == true && (
             <div className={`flex flex-col justify-center items-center`}>
-              <p className="m-1 font-semibold tracking-wide text-lg text-center">
-                Enter persons name if this is his first picture here..
+              <p className="m-1 md:w-full w-1/2 font-semibold tracking-wide text-lg text-center">
+                Enter persons name if this is his first picture here or leave it blank if it contains more than one person.
               </p>
-              <div className="flex flex-row justify-center items-center flex-wrap">
+              <div className=" mb-5 flex flex-row justify-center items-center flex-wrap">
                 <input
                   className=" border-2 border-solid border-white h-8 p-2 m-2 outline-none  bg-transparent rounded-md"
                   id="inputImagelabel"

@@ -68,10 +68,10 @@ const ImagePreviewModal = ({ base64Img, setFilepath, setModalsOpen }) => {
 
   return (
     <div
-      className={`${styles.modelwrapper} md:top-16 md:h-4/6 w-full h-5/6 absolute top-24 left-0 right-0 m-auto flex justify-center items-center flex-col`}
+      className={`${styles.modelwrapper} md:top-16 md:h-4/5 w-full h-5/6 absolute top-28 left-0 right-0 m-auto flex justify-center items-center flex-col`}
     >
       <div
-        className={`${styles.modal} md:w-11/12 relative w-4/5 h-full m-4  flex justify-center rounded-xl flex-col items-center`}
+        className={`${styles.modal} md:w-11/12 relative w-4/5 h-full overflow-hidden flex justify-center rounded-xl flex-col items-center`}
       >
         {base64Img && (
           <div
@@ -81,10 +81,15 @@ const ImagePreviewModal = ({ base64Img, setFilepath, setModalsOpen }) => {
               src={base64Img}
               className={`select-none`}
               alt="img"
-              height={400}
-              width={400}
+              height={350}
+              width={350}
               objectFit="contain"
             />
+            
+            <p className="m-1 md:w-full w-1/2 font-semibold tracking-wide text-lg text-center">
+              Enter persons name if this is his first picture here or leave it blank if it contains more than one person.
+            </p>
+
             <input
               className="h-8 m-1 p-2 outline-none border-2 border-solid border-white bg-transparent rounded-md "
               id="inputImagelabel"
