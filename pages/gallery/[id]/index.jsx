@@ -14,6 +14,7 @@ import {
 } from "../../../components/toast";
 import { toast } from "react-toastify";
 import { useAuth } from "../../../context/auth";
+import useAuthRequired from '../../../middlewares/useAuthRequired'
 
 const IndividualGallery = () => {
   const [items, setItems] = useState([]);
@@ -24,6 +25,8 @@ const IndividualGallery = () => {
 
   const { getToken } = useAuth();
   const token = getToken();
+
+  useAuthRequired(token);
 
   useEffect(() => {
     toast.dismiss();

@@ -28,7 +28,11 @@ const Todo = () => {
 
   useEffect(() => {
     toast.dismiss();
-    getAllTodos();
+
+    if(token){
+      getAllTodos();
+    }
+    
   }, [token]);
 
   const getAllTodos = () => {

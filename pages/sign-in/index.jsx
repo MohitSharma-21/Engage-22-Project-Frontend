@@ -9,10 +9,15 @@ import {
   updateToast,
 } from "../../components/toast";
 import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 export default function SignIn() {
   const [modalIsOpen, setModalsOpen] = useState(false);
   const [username, setUsername] = useState("");
+
+  useEffect(()=>{
+    toast.dismiss();
+  },[])
 
   const checkUsername = () => {
     if (!username) {

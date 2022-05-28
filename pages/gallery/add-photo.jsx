@@ -14,6 +14,7 @@ import {
 } from "../../components/toast";
 import { toast } from "react-toastify";
 import { useAuth } from "../../context/auth";
+import useAuthRequired from '../../middlewares/useAuthRequired'
 
 const AddPhoto = () => {
   const webcamRef = useRef(null);
@@ -21,9 +22,12 @@ const AddPhoto = () => {
   const [selfiePersonName, setSelfiePersonName] = useState("");
   const [clickSelfie, setClickSelfie] = useState(false);
   const [showSelfie, setShowSelfie] = useState(false);
+  const [disableButton, setDisableButton] = useState(false)
 
   const { getToken } = useAuth();
   const token = getToken();
+
+  useAuthRequired(token);
 
   const videoConstraints = {
     width: 500,
@@ -52,10 +56,13 @@ const AddPhoto = () => {
   };
 
   const uploadSelfie = () => {
+    setDisableButton(true)
+
     const dataForApiRequest = {
       images: selfie,
       image_label: selfiePersonName,
     };
+    
 
     waitToast();
 
@@ -72,11 +79,13 @@ const AddPhoto = () => {
         sucsessToast("Picture added to " + data);
 
         setShowSelfie(false);
+        setDisableButton(false)
         setSelfiePersonName("");
         setSelfie("");
       })
       .catch((err) => {
         // console.log(err);
+        setDisableButton(false)
 
         toast.dismiss();
         errorToast("some error occurred");
@@ -189,7 +198,8 @@ const AddPhoto = () => {
                   }}
                 />
                 <button
-                  className={`${styles.saveButton} m-1 px-6 py-1 font-semibold cursor-pointer rounded-3xl`}
+                  disabled={disableButton}
+                  className={`${disableButton==true ?  styles.saveButtonDisable : styles.saveButtonEnabe } m-1 px-6 py-1 font-semibold cursor-pointer rounded-3xl`}
                   onClick={() => {
                     setClickSelfie(false);
                     uploadSelfie();
