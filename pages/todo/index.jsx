@@ -7,6 +7,16 @@ import { useEffect } from "react";
 import AddTodo from "../../components/todo/AddTodo";
 import { useAuth } from "../../context/auth";
 import useAuthRequired from '../../middlewares/useAuthRequired'
+import {
+  errorToast,
+  infoToast,
+  sucsessToast,
+  warnToast,
+  waitToast,
+  updateToast,
+} from "../../components/toast";
+
+import { toast } from "react-toastify";
 
 const Todo = () => {
   const [tasks, setTasks] = useState([]);
@@ -17,10 +27,16 @@ const Todo = () => {
   useAuthRequired(token);
 
   useEffect(() => {
-    getAllTodos();
+    toast.dismiss();
+
+    if(token){
+      getAllTodos();
+    }
+    
   }, [token]);
 
   const getAllTodos = () => {
+    waitToast()
 
     axios({
       url: "api/todo/",
@@ -32,6 +48,8 @@ const Todo = () => {
       .then(({ data }) => {
         
         setTasks(data);
+
+        toast.dismiss();
       })
       .catch(function (err) {
         // console.log(err);

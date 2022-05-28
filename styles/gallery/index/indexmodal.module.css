@@ -28,3 +28,19 @@
 .close:hover {
   transform: scale(1.02);
 }
+
+
+.saveEnable {
+  border: 2px solid gray;
+  transition: all 0.2s ease-in-out;
+}
+
+.saveEnable:hover {
+  border-color: white;
+}
+
+.saveDisable {
+  background-color: white;
+  color: black;
+  cursor: not-allowed;
+}

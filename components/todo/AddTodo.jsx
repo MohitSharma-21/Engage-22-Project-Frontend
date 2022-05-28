@@ -26,6 +26,8 @@ export default function AddTodo({ tasks, setTasks, getAllTodos }) {
       return;
     }
 
+    waitToast()
+
     const dataForApiRequest = {
       title: title,
     };
@@ -39,14 +41,16 @@ export default function AddTodo({ tasks, setTasks, getAllTodos }) {
       },
     })
       .then(({ data }) => {
-        sucsessToast("Task created");
-
+        
         setTitle("");
         setTasks([...tasks, data]);
+
+        toast.dismiss();
+        sucsessToast("Task created");
       })
       .catch(function (err) {
         // console.log(err);
-
+        toast.dismiss();
         errorToast("Some error occurred");
       });
   };

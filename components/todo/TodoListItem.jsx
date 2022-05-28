@@ -23,6 +23,8 @@ export default function TodoListItem({ tasks, task, setTasks, getAllTodos }) {
   const deleteTask = (id) => {
     toast.dismiss();
 
+    waitToast()
+
     axios({
       url: `api/todo/${id}`,
       method: "DELETE",
@@ -31,11 +33,14 @@ export default function TodoListItem({ tasks, task, setTasks, getAllTodos }) {
       },
     })
       .then((res) => {
-        sucsessToast("Task Deleted");
-
         setTasks(tasks.filter((task) => task._id != id));
+
+        toast.dismiss();
+        sucsessToast("Task Deleted");
+        
       })
       .catch((err) => {
+        toast.dismiss();
         errorToast("some error occurred");
 
         // console.log(err);
@@ -50,6 +55,8 @@ export default function TodoListItem({ tasks, task, setTasks, getAllTodos }) {
       return;
     }
 
+    waitToast()
+
     const dataForApiRequest = {
       title: title,
     };
@@ -63,7 +70,7 @@ export default function TodoListItem({ tasks, task, setTasks, getAllTodos }) {
       },
     })
       .then(({ data }) => {
-        sucsessToast("Task Updated");
+        
         setEditMode(false);
 
         setTasks(
@@ -71,13 +78,17 @@ export default function TodoListItem({ tasks, task, setTasks, getAllTodos }) {
             task._id === id ? { ...task, title: data.title } : task
           )
         );
-
+        
         setTitle("");
+
+        toast.dismiss();
+        sucsessToast("Task Updated");
+
       })
 
       .catch(function (err) {
         // console.log(err);
-        
+        toast.dismiss();
         errorToast("some error occurred");
       });
   };

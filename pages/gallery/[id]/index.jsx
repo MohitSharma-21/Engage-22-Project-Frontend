@@ -14,6 +14,7 @@ import {
 } from "../../../components/toast";
 import { toast } from "react-toastify";
 import { useAuth } from "../../../context/auth";
+import useAuthRequired from '../../../middlewares/useAuthRequired'
 
 const IndividualGallery = () => {
   const [items, setItems] = useState([]);
@@ -25,11 +26,17 @@ const IndividualGallery = () => {
   const { getToken } = useAuth();
   const token = getToken();
 
+  useAuthRequired(token);
+
   useEffect(() => {
+    toast.dismiss();
     getPhotos();
   }, []);
 
   const getPhotos = () => {
+
+    waitToast()
+
     axios({
       url: `api/gallery/${folder_id}`,
       method: "GET",
@@ -40,6 +47,8 @@ const IndividualGallery = () => {
       .then(({ data }) => {
         setItems(data.images);
         setImageLabel(data.image_label);
+
+        toast.dismiss();
       })
 
       .catch(function (err) {
@@ -50,6 +59,8 @@ const IndividualGallery = () => {
   const deletePhoto = (index, id) => {
     toast.dismiss();
 
+    waitToast()
+
     axios({
       url: `api/gallery/${id}/${index}`,
       method: "PUT",
@@ -59,12 +70,14 @@ const IndividualGallery = () => {
     })
       .then(({ data }) => {
         setItems(items.filter((item, pos) => pos != index));
+
+        toast.dismiss();
         sucsessToast("Photo Deleted");
       })
 
       .catch(function (err) {
         // console.log(err);
-
+        toast.dismiss();
         errorToast("some error occurred");
       });
   };
