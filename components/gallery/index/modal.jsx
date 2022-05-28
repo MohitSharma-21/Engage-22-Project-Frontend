@@ -13,12 +13,17 @@ import {
 } from "../../toast";
 import { toast } from "react-toastify";
 import { useAuth } from "../../../context/auth";
+import { useEffect } from "react";
 
 const ImagePreviewModal = ({ base64Img, setFilepath, setModalsOpen }) => {
   const [selfiePersonName, setSelfiePersonName] = useState("");
 
   const { getToken } = useAuth();
   const token = getToken();
+
+  useEffect(()=>{
+    toast.dismiss();
+  })
 
   const uploadSelfie = () => {
 
@@ -40,7 +45,7 @@ const ImagePreviewModal = ({ base64Img, setFilepath, setModalsOpen }) => {
       .then(({ data }) => {
         
         toast.dismiss();
-        sucsessToast("Selfie added to " + data);
+        sucsessToast("Picture added to " + data);
 
         setSelfiePersonName("");
         setFilepath("");

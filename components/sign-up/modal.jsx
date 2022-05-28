@@ -18,6 +18,7 @@ import { useRouter } from "next/router";
 
 const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
   const [items, setItems] = useState([]);
+  const [disableButton, setDisableButton] = useState(false)
   const [webcamCheck, setWebcamCheck] = useState(false);
   const webcamRef = useRef(null);
   const router = useRouter();
@@ -54,9 +55,11 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
   };
 
   const addUser = () => {
+
     if (!username) {
       return;
     }
+    setDisableButton(true)
 
     waitToast();
 
@@ -184,8 +187,10 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
           </div>
           {items.length > 0 && (
             <button
-              onClick={addUser}
-              className={`${styles.camerabtn} mt-1 mb-4 px-5 py-1 pb-2 font-semibold flex justify-center items-center rounded-3xl cursor-pointer`}
+              disabled={disableButton}
+              onClick={()=> addUser()}
+              className={`${disableButton==true ?  styles.signupdisable : styles.signupenable } mt-1 mb-4 px-5 py-1 pb-2 font-semibold flex justify-center items-center rounded-3xl cursor-pointer`}
+              // className={disableButton==true ?  styles.signupdisable : styles.signupenable }
             >
               Sign-up
             </button>

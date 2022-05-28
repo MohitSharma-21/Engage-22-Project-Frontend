@@ -27,3 +27,22 @@
   background-color: white;
   color: black;
 }
+
+.signupenable {
+  border: 2px solid gray;
+  transition: all 0.2s ease-in-out;
+}
+
+.signupdisable {
+  background-color: white;
+  color: black;
+  cursor: not-allowed;
+}
+
+.sign-up-enable:hover {
+  border-color: white;
+}
+.sign-up-enable:active {
+  background-color: white;
+  color: black;
+}

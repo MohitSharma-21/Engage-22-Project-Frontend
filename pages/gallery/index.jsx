@@ -7,6 +7,16 @@ import { useAuth } from "../../context/auth";
 import ImagePreviewModal from "../../components/gallery/index/modal";
 import FolderListItem from "../../components/gallery/index/FolderListItem";
 import useAuthRequired from "../../middlewares/useAuthRequired";
+import {
+  errorToast,
+  infoToast,
+  sucsessToast,
+  warnToast,
+  waitToast,
+  updateToast,
+} from "../../components/toast";
+import { toast } from "react-toastify";
+
 
 const Gallery = () => {
   const [items, setItems] = useState([]);
@@ -22,6 +32,8 @@ const Gallery = () => {
   useEffect(() => {
 
     const fetchfolder = () => {
+      waitToast()
+
       axios({
         url: "api/gallery/",
         method: "GET",
@@ -31,13 +43,16 @@ const Gallery = () => {
       })
         .then(({ data }) => {
           setItems(data);
+
+          toast.dismiss();
         })
         .catch((err) => {
           // console.log(err);
         });
     };
 
-    if (token) {
+    if (token && modalIsOpen==false) {
+
       fetchfolder();
     }
 
@@ -48,11 +63,13 @@ const Gallery = () => {
     // setBase64Img('')
     if (e.target.files.length == 0) return;
 
+    waitToast()
     setFilepath(e.target.value);
     getBase64(e.target.files[0]);
   };
 
   const getBase64 = (file) => {
+
     const reader = new FileReader();
 
     reader.readAsDataURL(file);

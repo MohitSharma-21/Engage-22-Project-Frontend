@@ -69,7 +69,7 @@ const AddPhoto = () => {
     })
       .then(({ data }) => {
         toast.dismiss();
-        sucsessToast("Selfie added to " + data);
+        sucsessToast("Picture added to " + data);
 
         setShowSelfie(false);
         setSelfiePersonName("");

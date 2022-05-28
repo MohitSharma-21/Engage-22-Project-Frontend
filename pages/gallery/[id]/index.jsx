@@ -26,10 +26,14 @@ const IndividualGallery = () => {
   const token = getToken();
 
   useEffect(() => {
+    toast.dismiss();
     getPhotos();
   }, []);
 
   const getPhotos = () => {
+
+    waitToast()
+
     axios({
       url: `api/gallery/${folder_id}`,
       method: "GET",
@@ -40,6 +44,8 @@ const IndividualGallery = () => {
       .then(({ data }) => {
         setItems(data.images);
         setImageLabel(data.image_label);
+
+        toast.dismiss();
       })
 
       .catch(function (err) {
