@@ -32,8 +32,7 @@ const Gallery = () => {
   useEffect(() => {
 
     const fetchfolder = () => {
-      waitToast()
-
+      
       axios({
         url: "api/gallery/",
         method: "GET",
@@ -52,7 +51,8 @@ const Gallery = () => {
     };
 
     if (token && modalIsOpen==false) {
-
+      
+      waitToast()
       fetchfolder();
     }
 
