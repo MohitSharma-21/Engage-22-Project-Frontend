@@ -56,6 +56,8 @@ const IndividualGallery = () => {
   const deletePhoto = (index, id) => {
     toast.dismiss();
 
+    waitToast()
+
     axios({
       url: `api/gallery/${id}/${index}`,
       method: "PUT",
@@ -65,12 +67,14 @@ const IndividualGallery = () => {
     })
       .then(({ data }) => {
         setItems(items.filter((item, pos) => pos != index));
+
+        toast.dismiss();
         sucsessToast("Photo Deleted");
       })
 
       .catch(function (err) {
         // console.log(err);
-
+        toast.dismiss();
         errorToast("some error occurred");
       });
   };

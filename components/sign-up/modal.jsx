@@ -189,7 +189,7 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
             <button
               disabled={disableButton}
               onClick={()=> addUser()}
-              className={`${disableButton==true ?  styles.signupdisable : styles.signupenable } mt-1 mb-4 px-5 py-1 pb-2 font-semibold flex justify-center items-center rounded-3xl cursor-pointer`}
+              className={`${disableButton==true ?  styles.signUpDisable : styles.signUpEnable } mt-1 mb-4 px-5 py-1 pb-2 font-semibold flex justify-center items-center rounded-3xl cursor-pointer`}
               // className={disableButton==true ?  styles.signupdisable : styles.signupenable }
             >
               Sign-up

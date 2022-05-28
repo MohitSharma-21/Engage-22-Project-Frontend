@@ -17,13 +17,14 @@ import { useEffect } from "react";
 
 const ImagePreviewModal = ({ base64Img, setFilepath, setModalsOpen }) => {
   const [selfiePersonName, setSelfiePersonName] = useState("");
+  const [disableButton, setDisableButton] = useState(false)
 
   const { getToken } = useAuth();
   const token = getToken();
 
   useEffect(()=>{
     toast.dismiss();
-  })
+  },[])
 
   const uploadSelfie = () => {
 
@@ -31,6 +32,8 @@ const ImagePreviewModal = ({ base64Img, setFilepath, setModalsOpen }) => {
       images: base64Img,
       image_label: selfiePersonName,
     };
+
+    setDisableButton(true)
 
     waitToast();
 
@@ -93,7 +96,8 @@ const ImagePreviewModal = ({ base64Img, setFilepath, setModalsOpen }) => {
               }}
             />
             <button
-              className=" m-1 mt-2 px-7 py-1 font-semibold cursor-pointer rounded-3xl"
+              disabled={disableButton}
+              className={`${disableButton==true ?  styles.saveDisable : styles.saveEnable} m-1 mt-2 px-7 py-1 font-semibold cursor-pointer rounded-3xl`}
               onClick={() => uploadSelfie()}
             >
               Save

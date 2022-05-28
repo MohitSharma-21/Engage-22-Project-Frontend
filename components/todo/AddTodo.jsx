@@ -50,7 +50,7 @@ export default function AddTodo({ tasks, setTasks, getAllTodos }) {
       })
       .catch(function (err) {
         // console.log(err);
-
+        toast.dismiss();
         errorToast("Some error occurred");
       });
   };

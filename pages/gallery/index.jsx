@@ -46,12 +46,13 @@ const Gallery = () => {
           toast.dismiss();
         })
         .catch((err) => {
+          toast.dismiss();
           // console.log(err);
         });
     };
 
     if (token && modalIsOpen==false) {
-      
+
       waitToast()
       fetchfolder();
     }

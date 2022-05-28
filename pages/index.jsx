@@ -53,7 +53,7 @@ export default function Home() {
           )}
 
           <div className="p-1 font-bold text-lg tracking-wider">
-            Here you can manage your Selfies and ToDos too....
+            Here you can manage your Pictures and ToDos too....
           </div>
         </div>
       </div>

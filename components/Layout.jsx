@@ -11,7 +11,8 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Head>
-        <title>Picture and ToDo Manager</title>
+        <title>Pictures and ToDo Manager</title>
+        <meta name="description" content="Here you can manage your Pictures and TODOs. This website uses Face-recognition for your pictures classification and for user authentication too." />
       </Head>
 
       <ToastContainer

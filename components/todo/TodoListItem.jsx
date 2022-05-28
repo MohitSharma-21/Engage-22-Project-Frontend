@@ -33,10 +33,11 @@ export default function TodoListItem({ tasks, task, setTasks, getAllTodos }) {
       },
     })
       .then((res) => {
+        setTasks(tasks.filter((task) => task._id != id));
+
         toast.dismiss();
         sucsessToast("Task Deleted");
-
-        setTasks(tasks.filter((task) => task._id != id));
+        
       })
       .catch((err) => {
         toast.dismiss();
@@ -77,11 +78,12 @@ export default function TodoListItem({ tasks, task, setTasks, getAllTodos }) {
             task._id === id ? { ...task, title: data.title } : task
           )
         );
+        
+        setTitle("");
 
         toast.dismiss();
         sucsessToast("Task Updated");
 
-        setTitle("");
       })
 
       .catch(function (err) {
