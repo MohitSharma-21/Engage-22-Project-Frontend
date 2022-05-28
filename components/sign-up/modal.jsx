@@ -83,6 +83,8 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
           router.replace("/gallery");
           sucsessToast("Signed-up");
         }
+
+        setDisableButton(false)
       })
 
       .catch(function (err) {
@@ -95,6 +97,8 @@ const SignUpModal = ({ username, setUsername, modalIsOpen, setModalsOpen }) => {
           errorToast(err_msg);
           setModalsOpen(false);
         }
+        
+        setDisableButton(false)
       });
   };
 
