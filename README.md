@@ -7,8 +7,33 @@ In this project, I have used:
 - [Next.js](https://nextjs.org/)
 - Tailwind css
 - [face-api.js](https://github.com/justadudewhohacks/face-api.js/) for face recognition
+- [React-Toastify](https://www.npmjs.com/package/react-toastify) for pop-ups
 - Deployed the app on vercel [https://picture-and-todo-manager.vercel.app/](https://picture-and-todo-manager.vercel.app/)
 - **Backend** part can be found [here](https://github.com/MohitSharma-21/Engage-22-Project-Backend)
+
+
+## Features of project
+
+**User**
+- User Authentication using face recognition
+- Used jasonwebtokens(jwt) for server side authentication.
+- If the user tries to sign-up with an already registered username, it will show an error message.
+- While sign-up user can capture at max six images for verification
+- While sign-in if the user is not registered with the username it will show an error pop-up.
+- While sign-in if the model does not matches the face, with face used for sign-up it will show red rectangle on web cam around face.
+
+**Gallery**
+- Image classification in the Gallery page using face recognition
+- If the image contains more than one face, It classifies it as "Group Photo"
+- If the image doesn't conatins any face or the model doesn't detects any face then it classifies the image as "No face detected"
+- If the image has only one face, and If the user has saved some pictures with an Image label, then modal will find the best match with uploaded pictures and classifies accordingly else if the image doesn't matches with any one of the faces it will classify that image into "unknown".
+- You can both capture and upload image.
+- You can also delete an image.
+
+**ToDo** 
+- Todo Manager with add, edit and delete feature.
+
+
 
 
 ### Setting up the project
