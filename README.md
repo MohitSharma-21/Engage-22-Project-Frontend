@@ -7,7 +7,7 @@ In this project, I have used:
 - [Next.js](https://nextjs.org/)
 - Tailwind css
 - [face-api.js](https://github.com/justadudewhohacks/face-api.js/) for face recognition
-- Deployed the app on vercel [https://picture-and-todo-manager.herokuapp.com/](https://picture-and-todo-manager.vercel.app/)
+- Deployed the app on vercel [https://picture-and-todo-manager.vercel.app/](https://picture-and-todo-manager.vercel.app/)
 
 
 ### Setting up the project
