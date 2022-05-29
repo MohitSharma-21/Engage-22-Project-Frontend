@@ -15,7 +15,7 @@ In this project, I have used:
 
 Follow the following steps to setup this project.
 
-Or More detailed setup is [here](https://docs.google.com/document/d/11e8OAf8bUSYIFSRN9MPN-docPlZsRtjOo_FTxUwgtQY/edit?usp=sharing)
+Or More detailed setup is [here](https://docs.google.com/document/d/1C9-GtIkLhgYKe-9f2ZyujzEh_CabTlwG0jOldP-kJaM/edit?usp=sharing)
 
 **Note** - This task requires [yarn](https://yarnpkg.com/) which is a tool similar to npm.
 
